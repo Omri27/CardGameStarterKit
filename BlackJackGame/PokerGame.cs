@@ -154,6 +154,7 @@ namespace BlackJack
                 int j = 0;
                 foreach (BlackJackForm form in TurnPlayerForm)
                 {
+                    Players[j].PlayerIndex = j;
                     form.FormIndex = j;
                         j++;
                     form.SetTextBox(gameState.ToString());
