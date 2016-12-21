@@ -12,7 +12,8 @@
     <WarningLevel>4</WarningLevel>
     <StartupObject>
     </StartupObject>
-    <ApplicationIcon>Resources\TemplateIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
@@ -20,6 +21,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
     <PublishUrl>http://localhost/CardGame/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -34,7 +36,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,16 +87,16 @@
     <Compile Include="StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PokerForm.cs">
+    <Compile Include="BlackJackForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PokerForm.Designer.cs">
-      <DependentUpon>PokerForm.cs</DependentUpon>
+    <Compile Include="BlackJackForm.Designer.cs">
+      <DependentUpon>BlackJackForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PokerForm.resx">
-      <DependentUpon>PokerForm.cs</DependentUpon>
+    <EmbeddedResource Include="BlackJackForm.resx">
+      <DependentUpon>BlackJackForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsForm.resx">

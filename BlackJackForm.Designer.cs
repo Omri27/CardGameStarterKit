@@ -50,13 +50,11 @@
             this.winsLabel = new System.Windows.Forms.Label();
             this.winTextBox = new System.Windows.Forms.TextBox();
             this.endGameButton = new System.Windows.Forms.Button();
-            this.standButton = new System.Windows.Forms.Button();
+            this.FoldButton = new System.Windows.Forms.Button();
             this.dealButton = new System.Windows.Forms.Button();
-            this.hitButton = new System.Windows.Forms.Button();
             this.playerCard1 = new System.Windows.Forms.PictureBox();
             this.playerCard2 = new System.Windows.Forms.PictureBox();
             this.framePictureBox = new System.Windows.Forms.PictureBox();
-            this.doubleDownButton = new System.Windows.Forms.Button();
             this.recordPanel = new System.Windows.Forms.Panel();
             this.betPanel = new System.Windows.Forms.Panel();
             this.playerNameLabel = new System.Windows.Forms.Label();
@@ -105,7 +103,7 @@
             this.myBetLabel.ForeColor = System.Drawing.Color.Gold;
             this.myBetLabel.Location = new System.Drawing.Point(360, 38);
             this.myBetLabel.Name = "myBetLabel";
-            this.myBetLabel.Size = new System.Drawing.Size(64, 20);
+            this.myBetLabel.Size = new System.Drawing.Size(79, 25);
             this.myBetLabel.TabIndex = 7;
             this.myBetLabel.Text = "My Bet";
             // 
@@ -118,7 +116,7 @@
             this.myAccountLabel.Location = new System.Drawing.Point(130, 10);
             this.myAccountLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.myAccountLabel.Name = "myAccountLabel";
-            this.myAccountLabel.Size = new System.Drawing.Size(102, 20);
+            this.myAccountLabel.Size = new System.Drawing.Size(126, 25);
             this.myAccountLabel.TabIndex = 6;
             this.myAccountLabel.Text = "My Account";
             // 
@@ -320,7 +318,7 @@
             this.tiesLabel.ForeColor = System.Drawing.Color.Gold;
             this.tiesLabel.Location = new System.Drawing.Point(526, 10);
             this.tiesLabel.Name = "tiesLabel";
-            this.tiesLabel.Size = new System.Drawing.Size(42, 20);
+            this.tiesLabel.Size = new System.Drawing.Size(54, 25);
             this.tiesLabel.TabIndex = 4;
             this.tiesLabel.Text = "Ties";
             // 
@@ -345,7 +343,7 @@
             this.lossesLabel.ForeColor = System.Drawing.Color.Gold;
             this.lossesLabel.Location = new System.Drawing.Point(408, 10);
             this.lossesLabel.Name = "lossesLabel";
-            this.lossesLabel.Size = new System.Drawing.Size(66, 20);
+            this.lossesLabel.Size = new System.Drawing.Size(81, 25);
             this.lossesLabel.TabIndex = 2;
             this.lossesLabel.Text = "Losses";
             // 
@@ -357,7 +355,7 @@
             this.winsLabel.Location = new System.Drawing.Point(295, 10);
             this.winsLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.winsLabel.Name = "winsLabel";
-            this.winsLabel.Size = new System.Drawing.Size(48, 20);
+            this.winsLabel.Size = new System.Drawing.Size(61, 25);
             this.winsLabel.TabIndex = 1;
             this.winsLabel.Text = "Wins";
             // 
@@ -395,24 +393,24 @@
             this.endGameButton.UseVisualStyleBackColor = false;
             this.endGameButton.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // standButton
+            // FoldButton
             // 
-            this.standButton.BackColor = System.Drawing.Color.Transparent;
-            this.standButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
-            this.standButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.standButton.FlatAppearance.BorderSize = 0;
-            this.standButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.standButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.standButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.standButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.standButton.ForeColor = System.Drawing.Color.Black;
-            this.standButton.Location = new System.Drawing.Point(317, 655);
-            this.standButton.Name = "standButton";
-            this.standButton.Size = new System.Drawing.Size(112, 39);
-            this.standButton.TabIndex = 13;
-            this.standButton.Text = "Stand";
-            this.standButton.UseVisualStyleBackColor = false;
-            this.standButton.Click += new System.EventHandler(this.StandBtn_Click);
+            this.FoldButton.BackColor = System.Drawing.Color.Transparent;
+            this.FoldButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
+            this.FoldButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FoldButton.FlatAppearance.BorderSize = 0;
+            this.FoldButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.FoldButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.FoldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FoldButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FoldButton.ForeColor = System.Drawing.Color.Black;
+            this.FoldButton.Location = new System.Drawing.Point(317, 655);
+            this.FoldButton.Name = "FoldButton";
+            this.FoldButton.Size = new System.Drawing.Size(112, 39);
+            this.FoldButton.TabIndex = 13;
+            this.FoldButton.Text = "Fold";
+            this.FoldButton.UseVisualStyleBackColor = false;
+            this.FoldButton.Click += new System.EventHandler(this.FoldBtn_Click);
             // 
             // dealButton
             // 
@@ -433,26 +431,6 @@
             this.dealButton.Text = "Deal";
             this.dealButton.UseVisualStyleBackColor = false;
             this.dealButton.Click += new System.EventHandler(this.DealBtn_Click);
-            // 
-            // hitButton
-            // 
-            this.hitButton.BackColor = System.Drawing.Color.Transparent;
-            this.hitButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
-            this.hitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hitButton.FlatAppearance.BorderSize = 0;
-            this.hitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.hitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.hitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hitButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.hitButton.Location = new System.Drawing.Point(178, 655);
-            this.hitButton.Margin = new System.Windows.Forms.Padding(0);
-            this.hitButton.Name = "hitButton";
-            this.hitButton.Size = new System.Drawing.Size(112, 39);
-            this.hitButton.TabIndex = 12;
-            this.hitButton.Text = "Hit";
-            this.hitButton.UseVisualStyleBackColor = false;
-            this.hitButton.Click += new System.EventHandler(this.HitBtn_Click);
             // 
             // playerCard1
             // 
@@ -487,28 +465,6 @@
             this.framePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.framePictureBox.TabIndex = 16;
             this.framePictureBox.TabStop = false;
-            // 
-            // doubleDownButton
-            // 
-            this.doubleDownButton.BackColor = System.Drawing.Color.Transparent;
-            this.doubleDownButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
-            this.doubleDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doubleDownButton.FlatAppearance.BorderSize = 0;
-            this.doubleDownButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.doubleDownButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.doubleDownButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doubleDownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doubleDownButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.doubleDownButton.Location = new System.Drawing.Point(33, 655);
-            this.doubleDownButton.Margin = new System.Windows.Forms.Padding(0);
-            this.doubleDownButton.Name = "doubleDownButton";
-            this.doubleDownButton.Size = new System.Drawing.Size(123, 38);
-            this.doubleDownButton.TabIndex = 11;
-            this.doubleDownButton.Text = "Double Down";
-            this.doubleDownButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.doubleDownButton.UseVisualStyleBackColor = false;
-            this.doubleDownButton.Visible = false;
-            this.doubleDownButton.Click += new System.EventHandler(this.DblDwnBtn_Click);
             // 
             // recordPanel
             // 
@@ -606,7 +562,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(311, 306);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 16);
+            this.label1.Size = new System.Drawing.Size(14, 15);
             this.label1.TabIndex = 29;
             this.label1.Text = "0";
             // 
@@ -615,7 +571,7 @@
             this.playerTotalLabel.AutoSize = true;
             this.playerTotalLabel.Location = new System.Drawing.Point(243, 238);
             this.playerTotalLabel.Name = "playerTotalLabel";
-            this.playerTotalLabel.Size = new System.Drawing.Size(15, 16);
+            this.playerTotalLabel.Size = new System.Drawing.Size(14, 15);
             this.playerTotalLabel.TabIndex = 6;
             this.playerTotalLabel.Text = "0";
             // 
@@ -638,9 +594,7 @@
             this.Controls.Add(this.endGameButton);
             this.Controls.Add(this.playerTotalLabel);
             this.Controls.Add(this.dealButton);
-            this.Controls.Add(this.standButton);
-            this.Controls.Add(this.hitButton);
-            this.Controls.Add(this.doubleDownButton);
+            this.Controls.Add(this.FoldButton);
             this.Controls.Add(this.playerCard2);
             this.Controls.Add(this.playerCard1);
             this.Controls.Add(this.deckCard3PictureBox);
@@ -684,9 +638,8 @@
         private System.Windows.Forms.Button hundredButton;
         private System.Windows.Forms.TextBox winTextBox;
         private System.Windows.Forms.TextBox myBetTextBox;
-        private System.Windows.Forms.Button hitButton;
         private System.Windows.Forms.Button dealButton;
-        private System.Windows.Forms.Button standButton;
+        private System.Windows.Forms.Button FoldButton;
         private System.Windows.Forms.Label myAccountLabel;
         private System.Windows.Forms.Label myBetLabel;
         private System.Windows.Forms.TextBox gameOverTextBox;
@@ -705,7 +658,6 @@
         private System.Windows.Forms.PictureBox playerCard1;
         private System.Windows.Forms.PictureBox playerCard2;
         private System.Windows.Forms.PictureBox framePictureBox;
-        private System.Windows.Forms.Button doubleDownButton;
         private System.Windows.Forms.Panel recordPanel;
         private System.Windows.Forms.Panel betPanel;
         private System.Windows.Forms.Label playerNameLabel;
