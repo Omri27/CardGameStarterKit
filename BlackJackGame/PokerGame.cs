@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using BlackJack.CardGameFramework;
-
+using System.Linq;
 
 namespace BlackJack
 {
@@ -13,9 +13,7 @@ namespace BlackJack
 		private Player dealer;
         private Player player;
         private List<Player> players;
-
         private Player table;
-        //private List<BlackJackForm> PlayerForms;
         
         #endregion
 
@@ -24,10 +22,10 @@ namespace BlackJack
         // public properties to return the current player, dealer, and current deck
         public Player CurrentPlayer { get { return player; } }
         public List<BlackJackForm> PlayerForms { get; set; }
+        public List<BlackJackForm> PlayerFormsController { get; set; }
         public List<BlackJackForm> TurnPlayerForm { get; set; }
         public Player Dealer { get { return dealer; } }
         public Deck CurrentDeck { get { return deck; } }
-        public bool FirstTurn { get; set; }
         public bool ReBet { get; set; }
         public List<Player> Players { get { return players; } }
         public List<Card> TableCards { get; set; }
@@ -59,34 +57,51 @@ namespace BlackJack
             players = new List<Player>();
             PlayerForms = new List<BlackJackForm>();
             TurnPlayerForm = new List<BlackJackForm>();
+            PlayerFormsController = new List<BlackJackForm>();
             table = new Player();
 
-            //player2 = new Player(initBalance);
-
-		}
-        void GameOver()
+        }
+        public Player getPlayerByFormId(int FormId)
+        {
+            return Players.FirstOrDefault(x => FormId == x.PlayerId);
+        }
+       public void GameOver()
         {
             foreach (var fplayer in FoldedPlayers)
-                Players.RemoveAt(fplayer);
+                Players.Remove(getPlayerByFormId(fplayer));
             foreach (Player p in Players)
                 p.Hand.GetValueOfHand(TableCards);
             players.Sort();
-            foreach(BlackJackForm form in PlayerForms)
+            foreach(BlackJackForm form in PlayerFormsController)
             {
                 form.SetTextBox("Player " + players[players.Count-1].PlayerIndex + " has Won with " + players[players.Count - 1].Hand.GetValueOfHand(TableCards).ToString());
             }
 
             players[players.Count - 1].Balance += BetAmount;
-            PlayerForms[players[players.Count - 1].PlayerIndex].ShowBankValue();
-
-
+            //PlayerForms[players[players.Count - 1].PlayerIndex].ShowBankValue();
+           
+            WinnerForm().ShowBankValue();
+            foreach (var form in PlayerForms)
+                form.LockControls();
+        }
+        public BlackJackForm WinnerForm()
+        {
+            BlackJackForm result=null;
+            foreach (var form in PlayerForms)
+            {
+                if (players[players.Count - 1].PlayerId == form.FormId)
+                    result= form;
+            }
+            return result;
         }
         public void addPlayer(BlackJackForm form)
         {
             this.PlayerForms.Add(form);
+            PlayerFormsController.Add(form);
             this.TurnPlayerForm.Add(form);
             Player p = new Player(1000);
             p.PlayerIndex = form.FormIndex;
+            p.PlayerId = form.FormId;
             this.players.Add(p);
         }
         #endregion
@@ -150,11 +165,12 @@ namespace BlackJack
                     p.ClearBet();
                 // FormTurn = 0;
                 TurnPlayerForm = new List<BlackJackForm>(PlayerForms);
+                 //if(gameState == BlackJackGame.GameState.TURN)// in order to add another gambling round you need to this
+                //TurnPlayerForm.AddRange(PlayerForms);
                 var first = TurnPlayerForm[0];
                 int j = 0;
                 foreach (BlackJackForm form in TurnPlayerForm)
                 {
-                    Players[j].PlayerIndex = j;
                     form.FormIndex = j;
                         j++;
                     form.SetTextBox(gameState.ToString());
@@ -195,39 +211,40 @@ namespace BlackJack
                         GameOver();
                         break;
 
+                        //case BlackJackGame.GameState.NewStage: // To Add another level of the game you need to add another enum on gamestate & to the above switch case
+                        //    Card newStage = CurrentDeck.Draw();
+                        //    TableCards.Add(newStage);
+                        //    break;
+
+
                 }
                 foreach (BlackJackForm form in PlayerForms)
                 {
                     switch (gameState)
                     {
                         case BlackJackGame.GameState.FLOP:
-                            // gameOverTextBox.Text = "Flop";
+                            
                             form.updateTableCards();
                             break;
                         case BlackJackGame.GameState.TURN:
-                            // gameOverTextBox.Text = "Turn";
+                           
 
                             form.updateTableCards();
                             break;
                         case BlackJackGame.GameState.RIVER:
-                            // gameOverTextBox.Text = "River";
+                            
 
                             form.updateTableCards();
                             
                             break;
-                       
+                            // To Add another level of the game you need to add another enum on gamestate & to the above switch case
                     }
                 }
-                //if (gameState == BlackJackGame.GameState.ENDGAME)
-                //    GameOver();
-                    //GameOver();
+              
 
 
             }
-            //foreach(Player p in players)
-            //{
-            //    PlayerForms[p.PlayerIndex].SetTextBox(p.Hand.GetValueOfHand(TableCards).ToString());
-            //}
+          
         }
        
         /// <summary>

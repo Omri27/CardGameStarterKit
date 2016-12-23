@@ -44,12 +44,13 @@ namespace BlackJack
             //         }
             List<BlackJackForm> forms = new List<BlackJackForm>();
             game.gameState = BlackJackGame.GameState.PREFLOP;
-      
+            int j = 111;
             for (int i = 0; i < 3; i++)
             {
                 
                 forms.Add(new BlackJackForm(game));
                 forms[i].FormIndex = i;
+                forms[i].FormId = j;
                 forms[i].Text = i.ToString();
                 game.addPlayer(forms[i]);
                 forms[i].ShowBankValue();

@@ -31,6 +31,7 @@ namespace BlackJack
         public int Losses { get { return losses; } set { losses = value; } }
         public int Push { get { return pushes; } set { pushes = value; } }
         public int  PlayerIndex{ get; set; }
+        public int PlayerId { get; set; }
         /// <summary>
         /// Creates a player with a default balance account (i.e. it doesn't matter what the dealer's balance is)
         /// </summary>
