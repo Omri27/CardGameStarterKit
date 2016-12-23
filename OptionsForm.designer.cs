@@ -1,4 +1,6 @@
-﻿namespace BlackJack
+﻿using Poker.Properties;
+
+namespace Poker
 {
     partial class OptionsForm
     {
@@ -60,7 +62,7 @@
             // playerNameTextBox
             // 
             this.playerNameTextBox.BackColor = System.Drawing.Color.Silver;
-            this.playerNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", BlackJack.Properties.Settings.Default, "PlayerName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.playerNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", Settings.Default, "PlayerName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.playerNameTextBox.Location = new System.Drawing.Point(221, 111);
             this.playerNameTextBox.Name = "playerNameTextBox";
             this.playerNameTextBox.Size = new System.Drawing.Size(171, 32);
@@ -128,7 +130,7 @@
             // okButton
             // 
             this.okButton.BackColor = System.Drawing.Color.Transparent;
-            this.okButton.BackgroundImage = BlackJack.Properties.Resources.ButtonSquare;
+            this.okButton.BackgroundImage = Resources.ButtonSquare;
             this.okButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.okButton.FlatAppearance.BorderSize = 0;
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -144,7 +146,7 @@
             // cancelButton
             // 
             this.cancelButton.BackColor = System.Drawing.Color.Transparent;
-            this.cancelButton.BackgroundImage = BlackJack.Properties.Resources.ButtonSquare;
+            this.cancelButton.BackgroundImage = Resources.ButtonSquare;
             this.cancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.cancelButton.FlatAppearance.BorderSize = 0;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -173,7 +175,7 @@
             // 
             this.iconPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox.ErrorImage = null;
-            this.iconPictureBox.Image = BlackJack.Properties.Resources.StartMenuIcon;
+            this.iconPictureBox.Image = Resources.StartMenuIcon;
             this.iconPictureBox.InitialImage = null;
             this.iconPictureBox.Location = new System.Drawing.Point(471, -1);
             this.iconPictureBox.Name = "iconPictureBox";
@@ -185,7 +187,7 @@
             // OptionsForm
             // 
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BackgroundImage = BlackJack.Properties.Resources.backGreen;
+            this.BackgroundImage = Resources.backGreen;
             this.ClientSize = new System.Drawing.Size(625, 592);
             this.Controls.Add(this.iconPictureBox);
             this.Controls.Add(this.previewLabel);

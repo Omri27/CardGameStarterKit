@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BlackJack
+namespace Poker
 {
 	static class Program
 	{

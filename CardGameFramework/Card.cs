@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace BlackJack.CardGameFramework
+namespace Poker.CardGameFramework
 {
     /// <summary>
     /// Card suit values

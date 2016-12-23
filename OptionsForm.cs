@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace BlackJack
+namespace Poker
 {
     partial class OptionsForm : Form
     {

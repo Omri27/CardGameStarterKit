@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2AEA8A08-5010-41C7-BF40-FF02D9261A4A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BlackJack</RootNamespace>
+    <RootNamespace>Poker</RootNamespace>
     <AssemblyName>CardGame</AssemblyName>
     <WarningLevel>4</WarningLevel>
     <StartupObject>
@@ -58,9 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackJackGame\PokerLogic.cs" />
+    <Compile Include="PokerGame\PokerLogic.cs" />
     <Compile Include="CardGameFramework\Card.cs" />
-    <Compile Include="BlackJackGame\PokerGame.cs" />
+    <Compile Include="PokerGame\PokerGame.cs" />
     <Compile Include="OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +77,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="BlackJackGame\State.cs" />
-    <Compile Include="BlackJackGame\Player.cs" />
+    <Compile Include="PokerGame\State.cs" />
+    <Compile Include="PokerGame\Player.cs" />
     <Compile Include="CardGameFramework\Deck.cs" />
     <Compile Include="CardGameFramework\Hand.cs" />
     <Compile Include="StartForm.cs">
@@ -87,16 +87,16 @@
     <Compile Include="StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BlackJackForm.cs">
+    <Compile Include="PokerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BlackJackForm.Designer.cs">
-      <DependentUpon>BlackJackForm.cs</DependentUpon>
+    <Compile Include="PokerForm.Designer.cs">
+      <DependentUpon>PokerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BlackJackForm.resx">
-      <DependentUpon>BlackJackForm.cs</DependentUpon>
+    <EmbeddedResource Include="PokerForm.resx">
+      <DependentUpon>PokerForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsForm.resx">

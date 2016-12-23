@@ -1,4 +1,4 @@
-﻿namespace BlackJack
+﻿namespace Poker
 {
     partial class StartForm
     {
@@ -36,7 +36,7 @@
             // newGameButton
             // 
             this.newGameButton.BackColor = System.Drawing.Color.Transparent;
-            this.newGameButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonSquare;
+            this.newGameButton.BackgroundImage = global::Poker.Properties.Resources.ButtonSquare;
             this.newGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.newGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.newGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -51,7 +51,7 @@
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonSquare;
+            this.exitButton.BackgroundImage = global::Poker.Properties.Resources.ButtonSquare;
             this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,7 +66,7 @@
             // optionsButton
             // 
             this.optionsButton.BackColor = System.Drawing.Color.Transparent;
-            this.optionsButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonSquare;
+            this.optionsButton.BackgroundImage = global::Poker.Properties.Resources.ButtonSquare;
             this.optionsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.optionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,7 +80,7 @@
             // 
             // StartForm
             // 
-            this.BackgroundImage = global::BlackJack.Properties.Resources.SplashPage;
+            this.BackgroundImage = global::Poker.Properties.Resources.SplashPage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 623);
             this.Controls.Add(this.optionsButton);
@@ -91,7 +91,7 @@
             this.Name = "StartForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BlackJack Casino";
+            this.Text = "Poker Casino";
             this.ResumeLayout(false);
 
 		}

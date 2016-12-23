@@ -1,6 +1,6 @@
-﻿namespace BlackJack
+﻿namespace Poker
 {
-    partial class BlackJackForm
+    partial class PokerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlackJackForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PokerForm));
             this.clearBetButton = new System.Windows.Forms.Button();
             this.myBetLabel = new System.Windows.Forms.Label();
             this.myAccountLabel = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             // clearBetButton
             // 
             this.clearBetButton.BackColor = System.Drawing.Color.Transparent;
-            this.clearBetButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonSquare;
+            this.clearBetButton.BackgroundImage = global::Poker.Properties.Resources.ButtonSquare;
             this.clearBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.clearBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.clearBetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,7 +137,7 @@
             // hundredButton
             // 
             this.hundredButton.BackColor = System.Drawing.Color.Transparent;
-            this.hundredButton.BackgroundImage = global::BlackJack.Properties.Resources.coin4;
+            this.hundredButton.BackgroundImage = global::Poker.Properties.Resources.coin4;
             this.hundredButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.hundredButton.FlatAppearance.BorderSize = 0;
             this.hundredButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -156,7 +156,7 @@
             // fiftyButton
             // 
             this.fiftyButton.BackColor = System.Drawing.Color.Transparent;
-            this.fiftyButton.BackgroundImage = global::BlackJack.Properties.Resources.coin3;
+            this.fiftyButton.BackgroundImage = global::Poker.Properties.Resources.coin3;
             this.fiftyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.fiftyButton.FlatAppearance.BorderSize = 0;
             this.fiftyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -175,7 +175,7 @@
             // twentyFiveButton
             // 
             this.twentyFiveButton.BackColor = System.Drawing.Color.Transparent;
-            this.twentyFiveButton.BackgroundImage = global::BlackJack.Properties.Resources.coin2;
+            this.twentyFiveButton.BackgroundImage = global::Poker.Properties.Resources.coin2;
             this.twentyFiveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.twentyFiveButton.FlatAppearance.BorderSize = 0;
             this.twentyFiveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -195,7 +195,7 @@
             // tenButton
             // 
             this.tenButton.BackColor = System.Drawing.Color.Transparent;
-            this.tenButton.BackgroundImage = global::BlackJack.Properties.Resources.coin1;
+            this.tenButton.BackgroundImage = global::Poker.Properties.Resources.coin1;
             this.tenButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tenButton.FlatAppearance.BorderSize = 0;
             this.tenButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -378,7 +378,7 @@
             // 
             this.endGameButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.endGameButton.BackColor = System.Drawing.Color.Transparent;
-            this.endGameButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
+            this.endGameButton.BackgroundImage = global::Poker.Properties.Resources.ButtonRound;
             this.endGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.endGameButton.FlatAppearance.BorderSize = 0;
             this.endGameButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -396,7 +396,7 @@
             // FoldButton
             // 
             this.FoldButton.BackColor = System.Drawing.Color.Transparent;
-            this.FoldButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
+            this.FoldButton.BackgroundImage = global::Poker.Properties.Resources.ButtonRound;
             this.FoldButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FoldButton.FlatAppearance.BorderSize = 0;
             this.FoldButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -416,7 +416,7 @@
             // 
             this.dealButton.AutoSize = true;
             this.dealButton.BackColor = System.Drawing.Color.Transparent;
-            this.dealButton.BackgroundImage = global::BlackJack.Properties.Resources.ButtonRound;
+            this.dealButton.BackgroundImage = global::Poker.Properties.Resources.ButtonRound;
             this.dealButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dealButton.FlatAppearance.BorderSize = 0;
             this.dealButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -457,7 +457,7 @@
             // framePictureBox
             // 
             this.framePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.framePictureBox.BackgroundImage = global::BlackJack.Properties.Resources.FrameOrange;
+            this.framePictureBox.BackgroundImage = global::Poker.Properties.Resources.FrameOrange;
             this.framePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.framePictureBox.Location = new System.Drawing.Point(278, 390);
             this.framePictureBox.Name = "framePictureBox";
@@ -469,7 +469,7 @@
             // recordPanel
             // 
             this.recordPanel.BackColor = System.Drawing.Color.Transparent;
-            this.recordPanel.BackgroundImage = global::BlackJack.Properties.Resources.BorderPlaceYourBetTop;
+            this.recordPanel.BackgroundImage = global::Poker.Properties.Resources.BorderPlaceYourBetTop;
             this.recordPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.recordPanel.Controls.Add(this.lossesLabel);
             this.recordPanel.Controls.Add(this.tiesLabel);
@@ -487,7 +487,7 @@
             // betPanel
             // 
             this.betPanel.BackColor = System.Drawing.Color.Transparent;
-            this.betPanel.BackgroundImage = global::BlackJack.Properties.Resources.BorderPlaceYourBetBottom;
+            this.betPanel.BackgroundImage = global::Poker.Properties.Resources.BorderPlaceYourBetBottom;
             this.betPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.betPanel.Controls.Add(this.twentyFiveButton);
             this.betPanel.Controls.Add(this.clearBetButton);
@@ -575,10 +575,10 @@
             this.playerTotalLabel.TabIndex = 6;
             this.playerTotalLabel.Text = "0";
             // 
-            // BlackJackForm
+            // PokerForm
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImage = global::BlackJack.Properties.Resources.Background;
+            this.BackgroundImage = global::Poker.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(734, 706);
             this.Controls.Add(this.label1);
@@ -604,7 +604,7 @@
             this.Controls.Add(this.tableCard1PictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "BlackJackForm";
+            this.Name = "PokerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BlackJack Casino";
             this.Load += new System.EventHandler(this.BlackJackForm_Load);

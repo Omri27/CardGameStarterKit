@@ -178,7 +178,7 @@ your bet after seeing the initial cards you have been dealt.
 
 <ol>
 <li>Exit the game if it is running.</li>
-<li>In <b>Solution Explorer</b>, double-click <b>BlackJackForm.cs</b>.</li>
+<li>In <b>Solution Explorer</b>, double-click <b>PokerForm.cs</b>.</li>
 <li>Scroll down in the designer until the <b>Double Down</b> button is visible.</li>
 <li>Right-click the <b>Double Down</b> button, and then on the 
 shortcut menu, click <b>Properties</b>.</li>
@@ -265,7 +265,7 @@ game, changing the options, or quitting the application.</p></td></tr>
     picking a card.</p></td></tr>
 <tr><td><p><i>Hand.cs</i></p></td></tr>
 <tr><td><p>Contains the Hand class, which describes a hand of cards, including the number 
-and type of cards. Also contains the BlackJackHand class, which provides methods for 
+and type of cards. Also contains the PokerHand class, which provides methods for 
 comparing hands and calculating total hand values.</p></td></tr>
 </table>
 
@@ -274,7 +274,7 @@ comparing hands and calculating total hand values.</p></td></tr>
 	<table border='0' cellspacing='0' cellpadding='0' width="97%">
 <tr><td width="100%" style='width:100.0%;background:#eeede6;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
 <p><b>BlackJack User Interface</b></p></td></tr>
-<tr><td><p><i>BlackJackForm.cs</i></p></td>
+<tr><td><p><i>PokerForm.cs</i></p></td>
 </tr>
 <tr><td><p>This file contains the Windows Form that provides the BlackJack game
  with its user interface. It contains the <b>PictureBox</b> controls that display the 
@@ -294,8 +294,8 @@ form’s <b> BackGroundImage </b> property. The buttons displayed on this form a
 buttons with their  <b>BackGroundImage </b> property set also. The button’s text property 
 is displayed over the background image.</p>
 
-<p>The buttons on the <b>BlackJackForm.cs </b>form are created in the same way. However, 
-the playing cards are different. If you look at the BlackJackForm in Design view 
+<p>The buttons on the <b>PokerForm.cs </b>form are created in the same way. However, 
+the playing cards are different. If you look at the PokerForm in Design view 
 (right-click on the file name in Solution Explorer and select <b>View Designer</b>),
  you will see that there are <b>PictureBox </b>controls positioned on the table. To display
   the cards as they are dealt, these <b>PictureBox</b> controls have their <b>Image</b> 
@@ -303,7 +303,7 @@ the playing cards are different. If you look at the BlackJackForm in Design view
 
 <h3>Organizing Your Code Using Regions</h3>
 
-<p>When you open up a file such as <b>BlackJackGame.cs</b> in the code editor, you will notice 
+<p>When you open up a file such as <b>PokerGame.cs</b> in the code editor, you will notice 
 that it’s divided into regions that you can expand and contract. Regions do not change the source 
 code in any way, but they do make it easier to read.</p>
 
@@ -350,7 +350,7 @@ and image file name stored with the <b>PlayerImage</b> field.</li>
 <h3>Changing the Rules</h3>
 
 <p>The code that defines the rules for the BlackJack game, and the behavior of the dealer
-are stored in the class <b>BlackJackGame.cs</b>. You can edit the rules to make
+are stored in the class <b>PokerGame.cs</b>. You can edit the rules to make
 the game easier or harder to play. For example, currently the dealer will not take
 another card if the hand total is less than 17. Here is how you would change that
 limit to 21 and cause the dealer to always lose:</p>
@@ -360,7 +360,7 @@ limit to 21 and cause the dealer to always lose:</p>
 <p>&nbsp;</p>
 
 <ol>
-<li>In the Solution Explorer, double-click the file  <b>BlackJackGame.cs</b>.</li>
+<li>In the Solution Explorer, double-click the file  <b>PokerGame.cs</b>.</li>
 <li>Expand the <b>Game Methods</b> region.</li>
 <li>Find the method <b>DealerPlay()</b>.</li>
 <li>Change the line:<br>
@@ -384,7 +384,7 @@ similar way.</p>
 <p class="ProcedureLabel">To add a sound effect:</p>
 
 <ol>
-<li>In the <b>Solution Explorer</b>, right-click the file <b>BlackJackForm.cs</b> and
+<li>In the <b>Solution Explorer</b>, right-click the file <b>PokerForm.cs</b> and
 select <b>View Code</b>.</li>
 <li>Expand the region <b>Game Methods</b> if necessary, and find the method called
 <b>EndGame(EndResult endState).</b></li>
@@ -445,7 +445,7 @@ Use the player class to create a game with multi-player.</li>
 <br>Use the <b>OptionsForm.cs </b>and add file browsing for adding a
 new sound or a new image.</li>
 <li><i><b>Build your card game</b>:<br>
-</i>Replace <b>BlackJackForm.cs</b> with another Windows Form
+</i>Replace <b>PokerForm.cs</b> with another Windows Form
 that plays an entirely different game.&nbsp; Utilize the source
 code in the <b>CardGameFramework </b>folder to create new games
 such as Bridge or BlackJack.</li>

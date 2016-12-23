@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using BlackJack.CardGameFramework;
 using System.Linq;
+using Poker.CardGameFramework;
 
-namespace BlackJack
+namespace Poker
 {
-	public class BlackJackGame
+	public class PokerGame
 	{
 		#region Fields
         
@@ -21,9 +21,9 @@ namespace BlackJack
 
         // public properties to return the current player, dealer, and current deck
         public Player CurrentPlayer { get { return player; } }
-        public List<BlackJackForm> PlayerForms { get; set; }
-        public List<BlackJackForm> PlayerFormsController { get; set; }
-        public List<BlackJackForm> TurnPlayerForm { get; set; }
+        public List<PokerForm> PlayerForms { get; set; }
+        public List<PokerForm> PlayerFormsController { get; set; }
+        public List<PokerForm> TurnPlayerForm { get; set; }
         public Player Dealer { get { return dealer; } }
         public Deck CurrentDeck { get { return deck; } }
         public bool ReBet { get; set; }
@@ -44,7 +44,7 @@ namespace BlackJack
         /// Main Constructor for BlackJack Game
         /// </summary>
         /// <param name="initBalance"></param>
-        public BlackJackGame(int initBalance)
+        public PokerGame(int initBalance)
 		{
             Folded = false;
             BetAmount = 0;
@@ -55,9 +55,9 @@ namespace BlackJack
             dealer = new Player();
             player = new Player(initBalance) ;
             players = new List<Player>();
-            PlayerForms = new List<BlackJackForm>();
-            TurnPlayerForm = new List<BlackJackForm>();
-            PlayerFormsController = new List<BlackJackForm>();
+            PlayerForms = new List<PokerForm>();
+            TurnPlayerForm = new List<PokerForm>();
+            PlayerFormsController = new List<PokerForm>();
             table = new Player();
 
         }
@@ -72,7 +72,7 @@ namespace BlackJack
             foreach (Player p in Players)
                 p.Hand.GetValueOfHand(TableCards);
             players.Sort();
-            foreach(BlackJackForm form in PlayerFormsController)
+            foreach(PokerForm form in PlayerFormsController)
             {
                 form.SetTextBox("Player " + players[players.Count-1].PlayerIndex + " has Won with " + players[players.Count - 1].Hand.GetValueOfHand(TableCards).ToString());
             }
@@ -84,9 +84,9 @@ namespace BlackJack
             foreach (var form in PlayerForms)
                 form.LockControls();
         }
-        public BlackJackForm WinnerForm()
+        public PokerForm WinnerForm()
         {
-            BlackJackForm result=null;
+            PokerForm result=null;
             foreach (var form in PlayerForms)
             {
                 if (players[players.Count - 1].PlayerId == form.FormId)
@@ -94,7 +94,7 @@ namespace BlackJack
             }
             return result;
         }
-        public void addPlayer(BlackJackForm form)
+        public void addPlayer(PokerForm form)
         {
             this.PlayerForms.Add(form);
             PlayerFormsController.Add(form);
@@ -110,11 +110,11 @@ namespace BlackJack
         public void startGame()
         {
             DealNewGame();
-            foreach (BlackJackForm form in PlayerForms)
+            foreach (PokerForm form in PlayerForms)
             {
                 form.UpdateUIPlayerCards();
             }
-            foreach (BlackJackForm form in PlayerForms)
+            foreach (PokerForm form in PlayerForms)
             {
                 form.SetTextBox(gameState.ToString());
                 if (FormTurn == form.FormIndex)
@@ -130,7 +130,7 @@ namespace BlackJack
         public void SetUpGameInPlay()
         {
             var flag = false;
-            BlackJackForm[] Forms= new BlackJackForm[3]; 
+            PokerForm[] Forms= new PokerForm[3]; 
                 TurnPlayerForm.CopyTo(Forms);
             if (!Folded)
             {
@@ -144,7 +144,7 @@ namespace BlackJack
             if (TurnPlayerForm.Count>0)
             {
 
-                foreach (BlackJackForm form in TurnPlayerForm)
+                foreach (PokerForm form in TurnPlayerForm)
                 {
                     if (!flag)
                     {
@@ -164,12 +164,12 @@ namespace BlackJack
                 foreach (Player p in players)
                     p.ClearBet();
                 // FormTurn = 0;
-                TurnPlayerForm = new List<BlackJackForm>(PlayerForms);
-                 //if(gameState == BlackJackGame.GameState.TURN)// in order to add another gambling round you need to this
+                TurnPlayerForm = new List<PokerForm>(PlayerForms);
+                 //if(gameState == PokerGame.GameState.TURN)// in order to add another gambling round you need to this
                 //TurnPlayerForm.AddRange(PlayerForms);
                 var first = TurnPlayerForm[0];
                 int j = 0;
-                foreach (BlackJackForm form in TurnPlayerForm)
+                foreach (PokerForm form in TurnPlayerForm)
                 {
                     form.FormIndex = j;
                         j++;
@@ -183,7 +183,7 @@ namespace BlackJack
                 switch (gameState)
                 {
                    
-                    case BlackJackGame.GameState.FLOP:
+                    case PokerGame.GameState.FLOP:
                         // gameOverTextBox.Text = "Flop";
                         for (int i = 0; i < 3; i++)
                         {
@@ -194,44 +194,44 @@ namespace BlackJack
 
 
                         break;
-                    case BlackJackGame.GameState.TURN:
+                    case PokerGame.GameState.TURN:
                         // gameOverTextBox.Text = "Turn";
                         Card turnCard = CurrentDeck.Draw();
                         TableCards.Add(turnCard);
 
                         break;
-                    case BlackJackGame.GameState.RIVER:
+                    case PokerGame.GameState.RIVER:
                         // gameOverTextBox.Text = "River";
                         Card riverCard = CurrentDeck.Draw();
                         TableCards.Add(riverCard);
                         
 
                         break;
-                    case BlackJackGame.GameState.ENDGAME:
+                    case PokerGame.GameState.ENDGAME:
                         GameOver();
                         break;
 
-                        //case BlackJackGame.GameState.NewStage: // To Add another level of the game you need to add another enum on gamestate & to the above switch case
+                        //case PokerGame.GameState.NewStage: // To Add another level of the game you need to add another enum on gamestate & to the above switch case
                         //    Card newStage = CurrentDeck.Draw();
                         //    TableCards.Add(newStage);
                         //    break;
 
 
                 }
-                foreach (BlackJackForm form in PlayerForms)
+                foreach (PokerForm form in PlayerForms)
                 {
                     switch (gameState)
                     {
-                        case BlackJackGame.GameState.FLOP:
+                        case PokerGame.GameState.FLOP:
                             
                             form.updateTableCards();
                             break;
-                        case BlackJackGame.GameState.TURN:
+                        case PokerGame.GameState.TURN:
                            
 
                             form.updateTableCards();
                             break;
-                        case BlackJackGame.GameState.RIVER:
+                        case PokerGame.GameState.RIVER:
                             
 
                             form.updateTableCards();
@@ -248,7 +248,7 @@ namespace BlackJack
         }
        
         /// <summary>
-        /// Deals a new game.  This is invoked through the Deal button in BlackJackForm.cs
+        /// Deals a new game.  This is invoked through the Deal button in PokerForm.cs
         /// </summary>
         public void DealNewGame()
 		{

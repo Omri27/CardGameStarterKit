@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlackJack.CardGameFramework
+namespace Poker.CardGameFramework
 {
     public class Hand
     {
@@ -34,7 +34,7 @@ namespace BlackJack.CardGameFramework
     /// <summary>
     /// This class is game-specific.  Creates a BlackJack hand that inherits from class hand
     /// </summary>
-    public class BlackJackHand : Hand,IComparable
+    public class PokerHand : Hand,IComparable
     {
         private HandValue handValue ;
         public HandValue HandValue { get { return handValue; } }
@@ -49,7 +49,7 @@ namespace BlackJack.CardGameFramework
 
         public int CompareFaceValue(object otherHand)
         {
-            BlackJackHand aHand = otherHand as BlackJackHand;
+            PokerHand aHand = otherHand as PokerHand;
             if (aHand != null)
             {
                 return this.GetSumOfHand().CompareTo(aHand.GetSumOfHand());
@@ -63,14 +63,14 @@ namespace BlackJack.CardGameFramework
         public int CompareTo(object o)
        
         {
-            if (o is BlackJackHand)
+            if (o is PokerHand)
             {
-                BlackJackHand c = (BlackJackHand)o;
-                if (BlackJackLogic.score(this.AllCards) < BlackJackLogic.score(c.AllCards))
+                PokerHand c = (PokerHand)o;
+                if (PokerLogic.score(this.AllCards) < PokerLogic.score(c.AllCards))
                     return -1;
-                else if (BlackJackLogic.score(this.AllCards) > BlackJackLogic.score(c.AllCards))
+                else if (PokerLogic.score(this.AllCards) > PokerLogic.score(c.AllCards))
                     return 1;
-                else return BlackJackLogic.compareHands(this, c, BlackJackLogic.score(this.AllCards));
+                else return PokerLogic.compareHands(this, c, PokerLogic.score(this.AllCards));
             }
             throw new ArgumentException("Object is not a Card");
         }
@@ -96,7 +96,7 @@ namespace BlackJack.CardGameFramework
             allCards.Sort();
             
 
-            return BlackJackLogic.score(allCards);
+            return PokerLogic.score(allCards);
         }
     }
 }

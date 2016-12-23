@@ -1,5 +1,5 @@
 ﻿
-namespace BlackJack
+namespace Poker
 {
     /// <summary>
     /// EndResult maintains the game result state

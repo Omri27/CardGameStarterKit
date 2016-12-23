@@ -1,10 +1,10 @@
-﻿using BlackJack.CardGameFramework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Poker.CardGameFramework;
 
-namespace BlackJack
+namespace Poker
 {
-    public class BlackJackLogic
+    public class PokerLogic
     {
         private static Card isFlush(List<Card> h)
         {
@@ -188,7 +188,7 @@ namespace BlackJack
         }
        
       
-        public static int compareHands(BlackJackHand hand1, BlackJackHand hand2, Hand.HandValue hand)
+        public static int compareHands(PokerHand hand1, PokerHand hand2, Hand.HandValue hand)
         {
             switch (hand)
             {

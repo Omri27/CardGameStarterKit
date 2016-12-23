@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace BlackJack
+namespace Poker
 {
     partial class StartForm : Form
     {
-        private BlackJackGame game;
+        private PokerGame game;
         /// <summary>
         /// Main constructor for StartForm
         /// </summary>
@@ -22,33 +22,33 @@ namespace BlackJack
         /// <param name="e"></param>
 		private void NewGameBtn_Click(object sender, EventArgs e)
         {
-             game = new BlackJackGame(Properties.Settings.Default.InitBalance);
+             game = new PokerGame(Properties.Settings.Default.InitBalance);
             //         // Show the main BlackJack UI game
-            //using (BlackJackForm blackjackform1 = new BlackJackForm(game))
+            //using (PokerForm blackjackform1 = new PokerForm(game))
             //{
             //	Hide();
             //	blackjackform1.ShowDialog();
             //	Show();
             //}
-            //         using (BlackJackForm blackjackform2 = new BlackJackForm(game))
+            //         using (PokerForm blackjackform2 = new PokerForm(game))
             //         {
             //             Hide();
             //             blackjackform2.ShowDialog();
             //             Show();
             //         }
-            //         using (BlackJackForm blackjackform3 = new BlackJackForm(game))
+            //         using (PokerForm blackjackform3 = new PokerForm(game))
             //         {
             //             Hide();
             //             blackjackform3.ShowDialog();
             //             Show();
             //         }
-            List<BlackJackForm> forms = new List<BlackJackForm>();
-            game.gameState = BlackJackGame.GameState.PREFLOP;
+            List<PokerForm> forms = new List<PokerForm>();
+            game.gameState = PokerGame.GameState.PREFLOP;
             int j = 111;
             for (int i = 0; i < 3; i++)
             {
                 
-                forms.Add(new BlackJackForm(game));
+                forms.Add(new PokerForm(game));
                 forms[i].FormIndex = i;
                 forms[i].FormId = j;
                 forms[i].Text = i.ToString();
@@ -67,9 +67,9 @@ namespace BlackJack
                 forms[i].Show();
             }
 
-            //BlackJackForm f1 = new BlackJackForm(game);
-            //BlackJackForm f2 = new BlackJackForm(game);
-            //BlackJackForm f3 = new BlackJackForm(game);
+            //PokerForm f1 = new PokerForm(game);
+            //PokerForm f2 = new PokerForm(game);
+            //PokerForm f3 = new PokerForm(game);
             //game.addPlayer(f1);
             //game.addPlayer(f2);
             //game.addPlayer(f3);

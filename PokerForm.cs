@@ -3,20 +3,20 @@ using System.Text;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using BlackJack.CardGameFramework;
+using Poker.CardGameFramework;
 
-namespace BlackJack
+namespace Poker
 {
-    public partial class BlackJackForm : Form
+    public partial class PokerForm : Form
     {
         #region Fields
 
         //Creates a new blackjack game with one player and an inital balance set through the settings designer
-        private BlackJackGame game;
+        private PokerGame game;
         private PictureBox[] playerCards;
         private PictureBox[] tableCards;
         private List<Card> listOfCard;
-        private BlackJackForm blackJackForm;
+        private PokerForm pokerForm;
 
         public bool Folded { get; set; }
 
@@ -27,9 +27,9 @@ namespace BlackJack
         #region Main Constructor
 
         /// <summary>
-        /// Main constructor for the BlackJackForm.  Initializes components, loads the card skin images, and sets up the new game
+        /// Main constructor for the PokerForm.  Initializes components, loads the card skin images, and sets up the new game
         /// </summary>
-        public BlackJackForm(BlackJackGame game)
+        public PokerForm(PokerGame game)
         {
             Folded = false;
             this.game = game;
@@ -39,13 +39,13 @@ namespace BlackJack
             LoadCardSkinImages();
            
 
-            //game.gameState = BlackJackGame.GameState.PREFLOP;
+            //game.gameState = PokerGame.GameState.PREFLOP;
             //SetUpGameInPlay();
         }
 
-        public BlackJackForm(BlackJackForm blackJackForm)
+        public PokerForm(PokerForm pokerForm)
         {
-            this.blackJackForm = blackJackForm;
+            this.pokerForm = pokerForm;
         }
 
         #endregion
@@ -83,29 +83,29 @@ namespace BlackJack
                     
                     switch (game.gameState)
                     {
-                        case BlackJackGame.GameState.PREFLOP:
+                        case PokerGame.GameState.PREFLOP:
 
                             game.SetUpGameInPlay();
                            
                             break;
 
-                        case BlackJackGame.GameState.FLOP:
+                        case PokerGame.GameState.FLOP:
                           
                             game.SetUpGameInPlay();
                         
                             break;
-                        case BlackJackGame.GameState.TURN:
+                        case PokerGame.GameState.TURN:
                           
                             game.SetUpGameInPlay();
                          
                             break;
-                        case BlackJackGame.GameState.RIVER:
+                        case PokerGame.GameState.RIVER:
                           
                             game.SetUpGameInPlay();
                         
                             break;
 
-                        //case BlackJackGame.GameState.NewStage: // To Add another level of the game you need to add another enum on gamestate & to the above switch case
+                        //case PokerGame.GameState.NewStage: // To Add another level of the game you need to add another enum on gamestate & to the above switch case
 
                         //    game.SetUpGameInPlay();
 
@@ -387,7 +387,7 @@ namespace BlackJack
         {
             switch (game.gameState)
             {
-                case BlackJackGame.GameState.FLOP:
+                case PokerGame.GameState.FLOP:
                     for (int i = 0; i < 3; i++)
                     {
                         listOfCard.Add(game.TableCards[i]);
@@ -397,13 +397,13 @@ namespace BlackJack
                     }
 
                     break;
-                case BlackJackGame.GameState.TURN:
+                case PokerGame.GameState.TURN:
                     listOfCard.Add(game.TableCards[3]);
                     LoadCard(tableCards[3], game.TableCards[3]);
                     tableCards[3].Visible = true;
                     tableCards[3].BringToFront();
                     break;
-                case BlackJackGame.GameState.RIVER:
+                case PokerGame.GameState.RIVER:
                     listOfCard.Add(game.TableCards[4]);
                     LoadCard(tableCards[4], game.TableCards[4]);
                     tableCards[4].Visible = true;

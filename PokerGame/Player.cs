@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using BlackJack.CardGameFramework;
 using System.Windows.Forms;
 using System;
+using Poker.CardGameFramework;
 
-namespace BlackJack
+namespace Poker
 {
     public class Player : IComparable
     {
         // Objects to store player information
         private decimal balance;
-        private BlackJackHand hand;
+        private PokerHand hand;
         private decimal bet;
         private int wins;
         private int losses;
@@ -23,7 +23,7 @@ namespace BlackJack
 
         public Deck CurrentDeck { get { return currentDeck; } set { currentDeck = value; } }
         public string Image { get { return image; } set { image = value; } }
-        public BlackJackHand Hand { get { return hand; } }
+        public PokerHand Hand { get { return hand; } }
         public string Name { get { return name; } set { name = value; } }
         public decimal Bet { get { return bet; } set { bet = value; } }
         public decimal Balance { get { return balance; } set { balance = value; } }
@@ -46,12 +46,12 @@ namespace BlackJack
             // Sets the player's image and name that is displayed in the picture frame in the UI.
             this.image = Properties.Settings.Default.PlayerImage;
             this.name = Properties.Settings.Default.PlayerName;
-            this.hand = new BlackJackHand();
+            this.hand = new PokerHand();
             this.balance = newBalance;
         }
 
         /// <summary>
-        /// Increases the bet amount each time a bet is added to the hand.  Invoked through the betting coins in the BlackJackForm.cs UI
+        /// Increases the bet amount each time a bet is added to the hand.  Invoked through the betting coins in the PokerForm.cs UI
         /// </summary>
         /// <param name="amt"></param>
         public void IncreaseBet(decimal amt)
@@ -88,10 +88,10 @@ namespace BlackJack
         /// <summary>
         /// Creates a new hand for the current player
         /// </summary>
-        /// <returns>BlackJackHand</returns>
-        public BlackJackHand NewHand()
+        /// <returns>PokerHand</returns>
+        public PokerHand NewHand()
         {
-            this.hand = new BlackJackHand();
+            this.hand = new PokerHand();
             return this.hand;
         }
 
