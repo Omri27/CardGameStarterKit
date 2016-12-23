@@ -28,7 +28,6 @@ namespace Poker.CardGameFramework
             return false;
         }
 
-        
     }
 
     /// <summary>
