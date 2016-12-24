@@ -127,6 +127,7 @@ namespace Poker
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         private void FoldBtn_Click(object sender, EventArgs e)
         {
             
@@ -135,13 +136,14 @@ namespace Poker
             LockControls();
             if (game.TurnPlayerForm.Count  == 0)
             {
-                game.PlayerForms.RemoveAt(FormIndex);              
+                
+                game.PlayerForms.Remove(this);              
                 game.SetUpGameInPlay();
             }
             else
             {
                 game.SetUpGameInPlay();
-                game.PlayerForms.RemoveAt(FormIndex);
+                game.PlayerForms.Remove(this);
                  
 
             }
@@ -249,10 +251,11 @@ namespace Poker
         /// <param name="betValue"></param>
         private void Bet(decimal betValue)
         {
+            Player p = game.getPlayerByFormId(FormId);
             try
             {
                 // Update the bet amount
-                game.Players[FormIndex].IncreaseBet(betValue);
+                p.IncreaseBet(betValue);
                
 
                 // Update the "My Bet" and "My Account" values

@@ -97,7 +97,7 @@ namespace Poker
         public void addPlayer(PokerForm form)
         {
             this.PlayerForms.Add(form);
-            PlayerFormsController.Add(form);
+            this.PlayerFormsController.Add(form);
             this.TurnPlayerForm.Add(form);
             Player p = new Player(1000);
             p.PlayerIndex = form.FormIndex;

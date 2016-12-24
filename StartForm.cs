@@ -54,7 +54,7 @@ namespace Poker
                 forms[i].Text = i.ToString();
                 game.addPlayer(forms[i]);
                 forms[i].ShowBankValue();
-          
+                j++;
 
             }
 
